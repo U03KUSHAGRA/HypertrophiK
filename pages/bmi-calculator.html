@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="container bmi-container">
+    <nav class="breadcrumb">
+      Home / Fitness & Health / <strong>BMI Calculator</strong>
+    </nav>
+
+    <h1>BMI Calculator</h1>
+    <p>Modify the values and click the calculate button to use.</p>
+
+    <form id="bmiForm" novalidate>
+      <label for="age">Age (2 - 120):</label>
+      <input type="number" id="age" name="age" min="2" max="120" value="25" required />
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="male" selected>Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="height">Height (cm):</label>
+      <input type="number" id="height" name="height" min="30" step="0.1" value="180" required />
+
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" name="weight" min="1" step="0.1" value="65" required />
+
+      <button type="submit" class="btn">Calculate BMI</button>
+    </form>
+
+    <section id="results" class="results hidden" aria-live="polite" aria-atomic="true">
+      <h2>Results</h2>
+      <p><strong>BMI = </strong><span id="bmiValue"></span> kg/m<sup>2</sup></p>
+      <p><strong>Category:</strong> <span id="bmiCategory"></span></p>
+
+      <p><strong>Healthy BMI range:</strong> 18.5 kg/m<sup>2</sup> - 25 kg/m<sup>2</sup></p>
+      <p><strong>Healthy weight for your height:</strong> <span id="healthyWeightMin"></span> kg - <span id="healthyWeightMax"></span> kg</p>
+
+      <section class="bmi-categories-chart" tabindex="0">
+        <h3>WHO BMI Categories for adults (20+ years)</h3>
+        <div class="bmi-categories">
+          <div class="category severe-thinness">
+            <span class="range">Severe Thinness</span>
+            <span class="value">&lt; 16</span>
+          </div>
+          <div class="category moderate-thinness">
+            <span class="range">Moderate Thinness</span>
+            <span class="value">16-17</span>
+          </div>
+          <div class="category mild-thinness">
+            <span class="range">Mild Thinness</span>
+            <span class="value">17-18.5</span>
+          </div>
+          <div class="category normal">
+            <span class="range">Normal</span>
+            <span class="value">18.5-25</span>
+          </div>
+          <div class="category overweight">
+            <span class="range">Overweight</span>
+            <span class="value">25-30</span>
+          </div>
+          <div class="category obese-1">
+            <span class="range">Obese Class I</span>
+            <span class="value">30-35</span>
+          </div>
+          <div class="category obese-2">
+            <span class="range">Obese Class II</span>
+            <span class="value">35-40</span>
+          </div>
+          <div class="category obese-3">
+            <span class="range">Obese Class III</span>
+            <span class="value">&gt; 40</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-section" tabindex="0">
+        <h3>About BMI</h3>
+        <p>
+          The Body Mass Index (BMI) measures a person's leanness or corpulence based on height and weight. 
+          It helps indicate whether you are underweight, normal weight, overweight, or obese.
+        </p>
+      </section>
+    </section>
+  </div>
+
+  <script src="../scripts/bmi.js"></script>
+</body>
+</html>
